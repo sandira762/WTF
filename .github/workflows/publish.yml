@@ -70,12 +70,3 @@ jobs:
           files: extension.zip
           name: Release ${{ env.VERSION }}
           tag_name: ${{ env.VERSION }}
-    
-      - name: Publish to Chrome Web Store
-        uses: mnao305/chrome-extension-upload@v4.0.1
-        with:
-          client-id: ${{ secrets.CHROME_CLIENT_ID }}
-          client-secret: ${{ secrets.CHROME_CLIENT_SECRET }}
-          extension-id: 'kcdlihaidnmkenhlnofkjfoachidbnif'
-          file-path: extension.zip
-          refresh-token: ${{ secrets.CHROME_REFRESH_TOKEN }}
